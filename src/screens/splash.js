@@ -1,5 +1,6 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
 import React, {useEffect} from 'react';
+import { colors } from '../theme/designSystem';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
@@ -20,12 +21,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'green',
+    backgroundColor: colors.primary,
   },
   logo: {
     width: 200,
     height: 200,
-    //tintColor: '#fff',
   },
-  title: {color: '#fff', fontSize: 20, fontWeight: '800', marginTop: 20},
 });

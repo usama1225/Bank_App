@@ -7,6 +7,7 @@ import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Login from '../screens/Login';
 import Splash from '../screens/splash';
+import { colors } from '../theme/designSystem';
 
 
 const Navigate = () => {
@@ -18,11 +19,14 @@ const Navigate = () => {
         <Stack.Screen name="Registration"  component={Registration}  
         options={{
             title: 'Life Changer',
+            headerLeft:()=> null,
             headerTitleStyle: {
               color: 'white',
+              
             },
             headerStyle: {
-              backgroundColor: 'green',
+              backgroundColor: colors.primary,
+              
             }}}
         />
           <Stack.Screen name="Dashboard" component={Home} />
@@ -34,9 +38,10 @@ const Navigate = () => {
               color: 'white',
             },
             headerStyle: {
-              backgroundColor: 'green',
+              backgroundColor: colors.primary,
             }}}
           />
+        
           
 
           
