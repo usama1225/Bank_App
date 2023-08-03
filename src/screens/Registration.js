@@ -1,4 +1,4 @@
-import { View, Text,Linking } from 'react-native'
+import { View, Text,Linking ,ScrollView,SafeAreaView} from 'react-native'
 import React, { useState }  from 'react'
 import { useRef } from 'react'
 import { TextInput ,StyleSheet, Button} from 'react-native'
@@ -40,8 +40,11 @@ const Registration = ({navigation}) => {
   const handleModal = ()=>{
     setModalVisible(!isModalVisible);
   }
-
+  const handleSetPin = ()=>{
+    navigation.navigate('Login')
+  }
   return (
+    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow: 1}}>
     <View style={{margin:20, flex: 1,}}>
         <Text style={styles.text}>
         Create Account!</Text>
@@ -90,7 +93,6 @@ const Registration = ({navigation}) => {
           <Text style={{fontSize:20}}>Enter New 6-Digits Pin !</Text>
           <Text style={{color:colors.accent}}>Set 6-digit code for your account and transactions. So, you can login and access all the feature</Text>
           <View style={styles.TextInputView}>
-        
             <TextInput
             ref={pin1Ref}
             keyboardType='number-pad'
@@ -104,8 +106,8 @@ const Registration = ({navigation}) => {
             }}
             style={styles.TextInputText}
             />
-          </View >
-          <View style={styles.TextInputView}>
+          
+          
             <TextInput
             secureTextEntry={true}
             ref={pin2Ref}
@@ -119,8 +121,8 @@ const Registration = ({navigation}) => {
             }}
             style={styles.TextInputText}
             />
-          </View>
-          <View style={styles.TextInputView}>
+          
+          
             <TextInput
             secureTextEntry={true}
             ref={pin3Ref}
@@ -134,8 +136,7 @@ const Registration = ({navigation}) => {
             }}
             style={styles.TextInputText}
             />
-          </View>
-          <View style={styles.TextInputView}>
+          
             <TextInput
             secureTextEntry={true}
             ref={pin4Ref}
@@ -149,8 +150,8 @@ const Registration = ({navigation}) => {
             }}
             style={styles.TextInputText}
             />
-          </View>
-          <View style={styles.TextInputView}>
+          
+          
             <TextInput
             secureTextEntry={true}
             ref={pin5Ref}
@@ -164,8 +165,8 @@ const Registration = ({navigation}) => {
             }}
             style={styles.TextInputText}
             />
-          </View>
-          <View style={styles.TextInputView}>
+          
+          
             <TextInput
             secureTextEntry={true}
             ref={pin6Ref}
@@ -175,15 +176,31 @@ const Registration = ({navigation}) => {
             onChange={(pin6)=>{setPin6(pin6)}}
             style={styles.TextInputText}
             />
-          </View>
+          </View >
+          <TouchableOpacity><Text style={{color:'red', textAlign:'right'}} >clear all</Text></TouchableOpacity>
+          <TouchableOpacity onPress={handleSetPin} ><Text style={styles.pinBtn} >SET PIN</Text></TouchableOpacity>
         </View>
       </Modal>
+      
     </View>
+    </ScrollView>
   )
 }
 
 const styles=StyleSheet.create({
-    input:{
+  pinBtn:{
+    height:50,
+    backgroundColor:colors.primary,
+    borderWidth: 0,
+    borderRadius:10,
+    textAlignVertical:'center',
+    textAlign:'center',
+    fontSize:22,
+    marginTop:35,
+    color:'white'
+  },  
+  
+  input:{
         height: 60,
     margin:5,
     borderWidth: 1,
@@ -192,20 +209,22 @@ const styles=StyleSheet.create({
     borderColor:'black',
     },
     TextInputView:{
-     flex:0.5,
-      borderWidth:0.5,
-      margin:1,
-      width:50,
-      backgroundColor:'white',
-      borderRadius:10,
+      flexDirection:'row',
+      height:60,
+      width:300,
       justifyContent:'center',
       alignContent:'center',
+      marginTop:25
       
       
     },
     TextInputText:{
-      fontSize:20,
+      fontSize:25,
       textAlign:'center',
+      backgroundColor:'white',
+      margin:2,
+      borderRadius:7,
+      flex:1,
     },
     postelAdress:{
         height: 130,
@@ -237,7 +256,7 @@ const styles=StyleSheet.create({
         marginRight: 10,
       },
       modal:{
-        flex:0.5,
+        height:300,
         backgroundColor:colors.secondary, 
         margin:20 ,
         padding:20,
