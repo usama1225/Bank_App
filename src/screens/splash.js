@@ -5,7 +5,7 @@ import { colors } from '../theme/designSystem';
 const Splash = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Registration');
+      navigation.replace('Registration');
     }, 3000);
   }, []);
   return (

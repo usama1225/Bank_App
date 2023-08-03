@@ -53,7 +53,6 @@ const Registration = ({navigation}) => {
       placeholder='Full Name'
       style={styles.input}
       onChangeText={(text)=>setFullName(text)}
-      leftIcon={<Icon name="user" size={15} color="black" />}
       />
       <TextInput
       placeholder='Father Name'
@@ -178,7 +177,14 @@ const Registration = ({navigation}) => {
             />
           </View >
           <TouchableOpacity><Text style={{color:'red', textAlign:'right'}} >clear all</Text></TouchableOpacity>
-          <TouchableOpacity onPress={handleSetPin} ><Text style={styles.pinBtn} >SET PIN</Text></TouchableOpacity>
+          <TouchableOpacity onPress={handleSetPin} ><Text style={styles.pinBtn} >SET PIN   <Icon name="angle-right" size={23} color="white"  />
+          
+          
+          
+          
+          
+          
+          </Text></TouchableOpacity>
         </View>
       </Modal>
       
@@ -195,7 +201,7 @@ const styles=StyleSheet.create({
     borderRadius:10,
     textAlignVertical:'center',
     textAlign:'center',
-    fontSize:22,
+    fontSize:20,
     marginTop:35,
     color:'white'
   },  

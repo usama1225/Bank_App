@@ -1,9 +1,10 @@
 const colors = {
     primary: "#51cb20",
-    secondary: "#DDD0E3",
+    secondary: "#dbdcdc",
     accent: "#00b4d8",
     white: "white",
     black: "black",
+    placeholder:"#0000008A"
   };
   
   const typography = {

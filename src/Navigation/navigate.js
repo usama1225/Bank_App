@@ -27,19 +27,33 @@ const Navigate = () => {
             headerStyle: {
               backgroundColor: colors.primary,
               
-            }}}
+            },
+          }}
         />
-          <Stack.Screen name="Dashboard" component={Home} />
+          <Stack.Screen name="Dashboard" component={Home} 
+          options={{title:'Life Changer',
+          headerLeft:()=> null,
+          headerTitleStyle:{
+            color:'white'
+          },
+          headerStyle:{
+            backgroundColor:colors.primary,
+          }  
+            }}
+          
+          />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Login" component={Login}
           options={{
             title: 'Life Changer',
+            headerLeft:()=> null,
             headerTitleStyle: {
               color: 'white',
             },
             headerStyle: {
               backgroundColor: colors.primary,
-            }}}
+            }
+          }}
           />
         
           
